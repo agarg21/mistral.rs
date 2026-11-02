@@ -37,7 +37,7 @@ concurrency:
 
 jobs:
   generated:
-    if: github.repository == 'EricLBuehler/mistral.rs'
+    if: github.repository == 'agarg21/mistral.rs'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -79,7 +79,7 @@ jobs:
           fi
 
   build:
-    if: github.repository == 'EricLBuehler/mistral.rs'
+    if: github.repository == 'agarg21/mistral.rs'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -124,7 +124,7 @@ jobs:
           retention-days: 7
 
   deploy:
-    if: github.repository == 'EricLBuehler/mistral.rs' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    if: github.repository == 'agarg21/mistral.rs' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     needs: build
     runs-on: ubuntu-latest
     environment:
